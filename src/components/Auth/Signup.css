@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&family=Nunito:wght@500&display=swap');
+
+.form_signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    height: 500px;
+    row-gap: 10px;
+}

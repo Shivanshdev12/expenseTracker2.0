@@ -1,0 +1,14 @@
+.form_login {
+    display: flex;
+    font-family: 'Nunito', sans-serif;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    row-gap: 10px;
+}
+
+a.forget-password {
+    color: #000;
+    text-decoration: underline;
+}
