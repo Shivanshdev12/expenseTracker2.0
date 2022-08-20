@@ -16,6 +16,6 @@ const themeSlice = createSlice({
 });
 
 
-export const themeAction = themeSlice.actions;
+export const themeActions = themeSlice.actions;
 
 export default themeSlice;

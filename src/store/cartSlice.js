@@ -11,17 +11,21 @@ const cartSlice = createSlice({
             state.totalExpense = action.payload.totalExpense;
         },
         addExpense(state, action) {
+            const key = action.payload.key;
             const expense = action.payload.expense;
             const description = action.payload.description;
             const category = action.payload.category;
             state.items.push({
+                key,
                 expense,
                 description,
                 category
             });
         },
         removeExpense(state, action) {
-
+            let res = state.items.find(item => item.key === action.payload);
+            state.items = state.items.filter(item => item.key != action.payload);
+            state.totalExpense = state.totalExpense - res.expense;
         }
     }
 });

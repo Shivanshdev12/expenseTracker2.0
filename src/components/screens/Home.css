@@ -1,4 +1,145 @@
+div.dark {
+    background-color: #20232A;
+    color: #fff;
+}
+
 .profile_update {
     color: #000;
     text-decoration: underline;
+}
+
+.profile_update_dark {
+    color: #61DAFB;
+}
+
+.expense_main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 25vh;
+}
+
+.expense_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+
+
+div.expense_form form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 625px) {
+    #expense-list {
+        font-size: 10px;
+    }
+}
+
+#expense-list {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+
+.expense-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#expense-list .expense-item .expense-amount {
+    width: 15%;
+    border: 1px solid #e1e1e1;
+}
+
+.expense-amount,
+.expense-desc,
+.expense-category,
+.expense-delete,
+.expense-edit {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#expense-list .expense-item .expense-desc {
+    width: 30%;
+    border: 1px solid #e1e1e1;
+}
+
+
+@media screen and (max-width:625px) {
+    #expense-list {
+        font-size: 8px;
+    }
+
+    button.expense-delete {
+        font-size: 8px;
+    }
+
+    button.expense-edit {
+        font-size: 8px;
+    }
+}
+
+#expense-list .expense-item .expense-category {
+    width: 25%;
+    border: 1px solid #e1e1e1;
+}
+
+#expense-list .expense-item .expense-delete {
+    width: 9%;
+    border: 1px solid #e1e1e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#expense-list .expense-item .expense-edit {
+    width: 9%;
+    border: 1px solid #e1e1e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.premium {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-primary {
+    background: linear-gradient(97.38deg, rgba(89, 72, 234, .99) 5.73%, rgba(147, 73, 235, .99) 94.27%);
+    border-radius: 50px;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+.mb {
+    margin-bottom: 10px;
+}
+
+.ml {
+    margin-left: 10px;
 }

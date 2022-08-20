@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import Button from "../UI/Button";
 import "./Profile.css";
 
@@ -8,6 +9,7 @@ const Profile = () => {
     const [name, setName] = useState("");
     const [pic, setPic] = useState("");
     const idToken = localStorage.getItem('token');
+    const bgColor = useSelector(state => state.theme.bgColor);
     const profileHandler = (e) => {
         e.preventDefault();
         const url = "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyAOZUEl1VEtJpHQ36BjgMWcd-VLnjkHSSQ";
@@ -74,7 +76,7 @@ const Profile = () => {
         })
     }
     return (
-        <form onSubmit={profileHandler} className="profile">
+        <form onSubmit={profileHandler} className={bgColor === false ? "profile" : "profile profile_dark"}>
             <h2>Contact Details</h2>
             <label htmlFor="name">Full Name</label>
             <input id="name" type="text" placeholder="Enter your full name" defaultValue={name} ref={nameRef} />

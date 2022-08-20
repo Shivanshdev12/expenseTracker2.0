@@ -1,19 +1,23 @@
 import { Fragment } from "react";
-import { useHistory, NavLink } from 'react-router-dom';
-import { useDispatch } from "react-redux";
+import { NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
 import Button from "../UI/Button";
 import { authActions } from "../../store/authSlice";
+import { themeActions } from "../../store/themeSlice";
 import "./MainNavigation.css";
 
 const MainNavigation = () => {
     const dispatch = useDispatch();
-    const history = useHistory();
     const isToken = localStorage.getItem("token");
+    const isActivated = useSelector(state => state.theme.isActivated);
     const logoutHandler = () => {
         dispatch(authActions.logout());
         localStorage.removeItem("token");
         localStorage.removeItem("email");
         window.location.reload();
+    }
+    const switchHandler = () => {
+        dispatch(themeActions.changeTheme());
     }
     return (
         <Fragment>
@@ -36,6 +40,9 @@ const MainNavigation = () => {
                     </li>}
                     {isToken !== null && <li>
                         <Button onClick={logoutHandler} className="logout">Logout</Button>
+                    </li>}
+                    {isActivated === true && <li>
+                        <Button onClick={switchHandler} className="btn-toggle">Toggle</Button>
                     </li>}
                 </ul>
             </div>
