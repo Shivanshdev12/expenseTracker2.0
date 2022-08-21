@@ -1,4 +1,4 @@
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Login from "./components/Auth/Login";
 import SignUp from "./components/Auth/Sigup";
@@ -10,26 +10,33 @@ import About from "./components/screens/About";
 
 
 function App() {
+  const isToken = localStorage.getItem("token");
   return (
     <Layout>
       <Switch>
-        <Route path="/login">
+        <Route path="/" exact>
+          <Redirect to="/home" />
+        </Route>
+        {isToken === null && <Route path="/login">
           <Login />
-        </Route>
-        <Route path="/signup">
+        </Route>}
+        {isToken === null && <Route path="/signup">
           <SignUp />
-        </Route>
-        <Route path="/forget-password">
+        </Route>}
+        {isToken === null && <Route path="/forget-password">
           <ForgetPassword />
-        </Route>
-        <Route path="/profile">
+        </Route>}
+        {isToken !== null && <Route path="/profile">
           <Profile />
-        </Route>
-        <Route path="/home">
+        </Route>}
+        {isToken !== null && <Route path="/home">
           <Home />
-        </Route>
+        </Route>}
         <Route path="/about">
           <About />
+        </Route>
+        <Route path="*">
+          <Redirect to="/login" />
         </Route>
       </Switch>
     </Layout>
