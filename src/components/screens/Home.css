@@ -4,8 +4,7 @@ div.dark {
 }
 
 .profile_update {
-    color: #000;
-    text-decoration: underline;
+    color: #1db1d9;
 }
 
 .profile_update_dark {
@@ -25,6 +24,32 @@ div.dark {
     justify-content: center;
     align-items: center;
     height: 30vh;
+}
+
+div.input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.input.input_category {
+    width: 100%;
+}
+
+div.input select {
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid #e1e1e1;
+}
+
+div.input label {
+    padding: 0px 10px;
+}
+
+div.input input {
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid #e1e1e1;
 }
 
 

@@ -121,19 +121,25 @@ const Home = (props) => {
                 </div>
                 <div className="expense_form">
                     <form onSubmit={submitHandler}>
-                        <label htmlFor="expense">Expense:</label>
-                        <input type="number" id="expense" placeholder="Enter expense" value={expense} onChange={(e) => setExpense(e.target.value)} required />
-                        <label htmlFor="desc">Description:</label>
-                        <input type="text" id="desc" placeholder="Enter description" value={description} onChange={(e) => setDescription(e.target.value)} required />
-                        <label htmlFor="category">Category</label>
-                        <select name="category" id="category" value={category} onChange={(e) => setCategory(e.target.value)}
-                            required>
-                            <option value="">Select an Option</option>
-                            <option value="food">Food</option>
-                            <option value="Petrol">Petrol</option>
-                            <option value="Medical">Medical</option>
-                            <option value="Others">Others</option>
-                        </select>
+                        <div className="input">
+                            <label htmlFor="expense">Expense:</label>
+                            <input type="number" id="expense" placeholder="Enter expense" value={expense} onChange={(e) => setExpense(e.target.value)} required />
+                        </div>
+                        <div className="input">
+                            <label htmlFor="desc">Description:</label>
+                            <input type="text" id="desc" placeholder="Enter description" value={description} onChange={(e) => setDescription(e.target.value)} required />
+                        </div>
+                        <div className="input input_category">
+                            <label htmlFor="category">Category</label>
+                            <select name="category" id="category" value={category} onChange={(e) => setCategory(e.target.value)}
+                                required>
+                                <option value="">Select an Option</option>
+                                <option value="food">Food</option>
+                                <option value="Petrol">Petrol</option>
+                                <option value="Medical">Medical</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </div>
                         <Button className="btn-primary mb">Add Expense</Button>
                     </form>
                 </div>

@@ -1,6 +1,6 @@
 .btn {
     background: linear-gradient(97.38deg, rgba(89, 72, 234, .99) 5.73%, rgba(147, 73, 235, .99) 94.27%);
-    border: none;
+    border: none !important;
     border-radius: 50px;
     padding: 6px 14px;
     font-weight: 600;
