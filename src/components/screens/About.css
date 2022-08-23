@@ -26,6 +26,11 @@
     width: 95vw;
 }
 
+.heading img {
+    max-width: 300px;
+    width: 50%;
+}
+
 .main {
     height: fit-content;
 }
